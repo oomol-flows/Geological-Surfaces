@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "+python#1",
+      "contentWidth": 530,
+      "cardCollapse": {
+        "scriptlet": true
+      },
+      "selected": true,
+      "dragging": false,
+      "position": {
+        "x": 332.753307776278,
+        "y": 275.24228185535117
+      },
+      "positionAbsolute": {
+        "x": 332.753307776278,
+        "y": 275.24228185535117
+      },
+      "width": 544,
+      "height": 279
+    },
+    {
+      "id": "download_file#1",
+      "contentWidth": 200,
+      "handleExpand": {
+        "url": true,
+        "file_name": true
+      },
+      "selected": false,
+      "position": {
+        "x": -403.84968696909,
+        "y": 466.0418984995227
+      },
+      "width": 434,
+      "height": 307
+    }
+  ],
+  "edges": [
+    {
+      "id": "9a141aa0-f5a7-49a4-a069-25e6a2b1a06b",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "download_file#1",
+            "output_handle": "file_path"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "+python#1",
+            "input_handle": "geological_data"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-json)",
+        "var(--edge-json)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+nodes:
+  - task:
+      ui:
+        default_width: 530
+      icon: ":logos:python:"
+      inputs_def:
+        - handle: geological_data
+          description: Input
+          json_schema:
+            type: string
+          value: input value
+      outputs_def:
+        - handle: out
+          description: Output
+          json_schema:
+            type: string
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+python#1.py
+    title: "Python #1"
+    node_id: +python#1
+    inputs_from:
+      - handle: in
+        value: input value
+        from_node:
+          - node_id: download_file#1
+            output_handle: file_path
+      - handle: geological_data
+        from_node:
+          - node_id: download_file#1
+            output_handle: file_path
+  - task: tools::download_file
+    title: "Download File #1"
+    node_id: download_file#1
+    inputs_from:
+      - handle: url
+        value: https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv
+      - handle: file_name
+        value: geological_data.csv
+      - handle: folder
+        value: /oomol-storage/data
