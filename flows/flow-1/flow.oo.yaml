@@ -21,11 +21,6 @@ nodes:
     title: "Python #1"
     node_id: +python#1
     inputs_from:
-      - handle: in
-        value: input value
-        from_node:
-          - node_id: download_file#1
-            output_handle: file_path
       - handle: geological_data
         from_node:
           - node_id: download_file#1
