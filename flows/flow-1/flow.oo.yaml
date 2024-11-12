@@ -34,4 +34,4 @@ nodes:
       - handle: file_name
         value: geological_data.csv
       - handle: folder
-        value: /oomol-storage/data
+        value: /oomol-driver/oomol-storage
